@@ -5,7 +5,7 @@ const useMounted = () => {
 
   useEffect(() => {
     setHasMounted(true);
-  });
+  }, []);
   return hasMounted;
 };
 

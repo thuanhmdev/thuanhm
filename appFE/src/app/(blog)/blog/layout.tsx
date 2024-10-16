@@ -3,18 +3,40 @@ import React from "react";
 import AuthUser from "./auth-user";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { sendRequest } from "@/http/http";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  return {
-    title: (await parent).title,
-    description: (await parent).description,
+export async function generateMetadata(): Promise<Metadata> {
+
+  let metadata = {
+    title: "Trang chủ",
+    description: "",
     openGraph: {
-      siteName: (await parent)?.openGraph?.siteName,
-      locale: (await parent)?.openGraph?.locale,
+      locale: "vi_VN",
+      siteName: "ThuanHM",
     },
   };
+
+  try {
+    const result = await sendRequest<TResponse<TSetting>>({
+      url: `/blog-api/settings`,
+      method: "GET",
+    });
+    if (result.statusCode === 200) {
+      metadata = {
+        title: result.data.title,
+        description: result.data.description,
+        openGraph: {
+          siteName: result.data.siteName,
+          locale: "vi_VN",
+        },
+      };
+    }
+  } catch (error) {
+    console.error("Error in generateMetadata:", error);
+  } finally {
+    console.log("Metadata generation completed");
+  }
+  return metadata;
 }
 
 const ClientLayout = ({

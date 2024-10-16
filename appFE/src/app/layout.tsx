@@ -12,29 +12,37 @@ import NextAuthWrapper from "./next-auth-wrapper";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { data, statusCode } = await sendRequest<TResponse<TSetting>>({
-    url: `/blog-api/settings`,
-    method: "GET",
-  });
-  if (statusCode === 200) {
-    return {
-      title: data.title,
-      description: data.description,
-      openGraph: {
-        siteName: data.siteName,
-        locale: "vi_VN",
-      },
-    };
-  } else {
-    return {
-      title: "Trang chủ",
-      description: "",
-      openGraph: {
-        locale: "vi_VN",
-        siteName: "ThuanHM",
-      },
-    };
+
+  let metadata = {
+    title: "Trang chủ",
+    description: "",
+    openGraph: {
+      locale: "vi_VN",
+      siteName: "ThuanHM",
+    },
+  };
+
+  try {
+    const result = await sendRequest<TResponse<TSetting>>({
+      url: `/blog-api/settings`,
+      method: "GET",
+    });
+    if (result.statusCode === 200) {
+      metadata = {
+        title: result.data.title,
+        description: result.data.description,
+        openGraph: {
+          siteName: result.data.siteName,
+          locale: "vi_VN",
+        },
+      };
+    }
+  } catch (error) {
+    console.error("Error in generateMetadata:", error);
+  } finally {
+    console.log("Metadata generation completed");
   }
+  return metadata;
 }
 
 export default function RootLayout({
