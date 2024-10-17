@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import TypingEffect from "../effect/typing-effect";
+import TypingEffect from "@/components/effect/typing-effect";
 
 const HomeSection = () => {
   return (

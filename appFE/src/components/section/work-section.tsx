@@ -1,7 +1,6 @@
-import { Check, Dot } from "lucide-react";
-import Image from "next/image";
 import React from "react";
-import RevealEffect from "../effect/reveal-effect";
+import RevealEffect from "@/components/effect/reveal-effect";
+
 
 const WorkSection = () => {
   return (
@@ -91,7 +90,7 @@ const WorkSection = () => {
                     <div className="border-l-[2px] border-neutral-800 ps-3">
                       <p>
                         <span className="text-neutral-200">
-                          NivaCloud - Admi:
+                          NivaCloud - Admin:
                         </span>{" "}
                         ReactJS, Typescript, Mantine UI
                       </p>
@@ -131,13 +130,13 @@ const WorkSection = () => {
                     <div className="border-l-[2px] border-neutral-800 ps-3">
                       <p>
                         <span className="text-neutral-200">Frontend:</span>{" "}
-                        React, Javascript, Formik...
+                        React, Javascript, Formik
                       </p>
                     </div>
                     <div className="border-l-[2px] border-neutral-800 ps-3">
                       <p>
                         <span className="text-neutral-200">Backend:</span>{" "}
-                        NodeJS (LoopBackJS), Mongoose
+                        NodeJS (LoopBackJS), MongoDB
                       </p>
                     </div>
                   </div>
@@ -178,7 +177,7 @@ const WorkSection = () => {
                       <p>
                         <span className="text-neutral-200">Frontend:</span>{" "}
                         React, Typescript, Material UI, Redux, React hook
-                        form,..{" "}
+                        form
                       </p>
                     </div>
                     <div className="border-l-[2px] border-neutral-800 ps-3">

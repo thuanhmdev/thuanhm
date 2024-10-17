@@ -86,7 +86,7 @@ const PersonalProjectSection = () => {
                         </li>
                         <li>
                           <span className="text-neutral-200">Backend:</span>{" "}
-                          Java, Spring Framework (Spring Boot, Spring security, ...), MySQL
+                          Java, Spring Framework (Spring Boot, Spring security...), MySQL
                         </li>
                       </ul>
                     </div>
@@ -141,7 +141,7 @@ const PersonalProjectSection = () => {
                         </li>
                         <li>
                           <span className="text-neutral-200">Backend:</span>{" "}
-                          Java, Spring Framework (Spring Boot, Spring security, ...), MySQL
+                          Java, Spring Framework (Spring Boot, Spring security...), MySQL
                         </li>
                         <li>
                           <span className="text-neutral-200">Deploy:</span> VPS

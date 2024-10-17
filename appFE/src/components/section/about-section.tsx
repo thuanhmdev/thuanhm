@@ -1,7 +1,7 @@
 import { Dot } from "lucide-react";
 import React from "react";
-import RevealEffect from "../effect/reveal-effect";
-import ParallaxImage from "../effect/parallax-image";
+import RevealEffect from "@/components/effect/reveal-effect";
+import ParallaxImage from "@/components/effect/parallax-image";
 
 const AboutSection = () => {
   const featuresData = [
