@@ -79,7 +79,7 @@ export const authOptions: AuthOptions = {
           url: `/blog-api/auth/social-media`,
           method: "POST",
           body: {
-            provider: account?.provider?.toLocaleUpperCase(),
+            provider: account?.provider?.toUpperCase(),
             username: user.email,
             name: user.name,
             imageProvider: user.image,
