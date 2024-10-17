@@ -9,7 +9,7 @@ const PrevArrow = (props: any) => {
   const { onClick } = props;
   return (
     <button
-      className="bg-blue-500/50 p-1 rounded-md absolute left-1 top-[150px] z-10"
+      className="bg-blue-500/50 p-1 rounded-md absolute left-1 top-[50%] -translate-y-[50%] z-10"
       onClick={onClick}
     >
       <ChevronLeft className="text-neutral-50" />
@@ -21,7 +21,7 @@ const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
     <button
-      className="bg-blue-500/50 p-1 rounded-md absolute right-1 top-[150px]"
+      className="bg-blue-500/50 p-1 rounded-md absolute right-1 top-[50%] -translate-y-[50%] z-10"
       onClick={onClick}
     >
       <ChevronRight className="text-neutral-50" />
