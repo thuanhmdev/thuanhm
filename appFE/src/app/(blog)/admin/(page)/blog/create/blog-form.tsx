@@ -46,8 +46,8 @@ const BlogForm = ({ id }: IProps) => {
             "keyword",
             result.data?.keyword?.length! > 0
               ? result.data?.keyword.split(",").map((item: string) => ({
-                  value: item,
-                }))
+                value: item,
+              }))
               : [{ value: "" }]
           );
           form.setValue("image", result.data.image ?? "");
@@ -130,7 +130,10 @@ const BlogForm = ({ id }: IProps) => {
   };
 
   const toolbarOptions = [
-    [{ font: [] }],
+    [{ font: ['Montserrat', 'Arial', 'Roboto', 'Times New Roman'] }],
+    [{
+      size: ['8px', '9px', '10px', '12px', '14px', '16px', '20px', '24px', '32px', '42px', '54px', '68px', '84px', '98px']
+    }],
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     [{ align: [] }],
     [{ header: 1 }, { header: 2 }], // custom button values
