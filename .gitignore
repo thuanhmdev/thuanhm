@@ -36,9 +36,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# *.yml
+*.yml
 
-# application.properties
+application.properties
 
 # project.properties
 # *.properties
