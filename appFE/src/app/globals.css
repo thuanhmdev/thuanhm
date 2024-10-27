@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+@layer base {
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .ck-content {
+    @apply leading-relaxed break-words;
+  }
+
+  .ck-content p {
+    @apply m-0 mt-3 p-0 !important;
+  }
+
+  .ck-content p.info-box {
+    --background-size: 30px;
+    --background-color: #e91e63;
+    padding: 1.2em 2em;
+    border: 1px solid var(--background-color);
+    background: linear-gradient(
+        135deg,
+        var(--background-color) 0%,
+        var(--background-color) var(--background-size),
+        transparent var(--background-size)
+      ),
+      linear-gradient(
+        135deg,
+        transparent calc(100% - var(--background-size)),
+        var(--background-color) calc(100% - var(--background-size)),
+        var(--background-color)
+      );
+    border-radius: 10px;
+    margin: 1.5em 2em;
+    box-shadow: 5px 5px 0 #ffe6ef;
+  }
+
+  .ck-content blockquote.side-quote {
+    @apply not-italic
+           float-right
+           w-[35%]
+           relative
+           border-0
+           overflow-visible
+           z-[1]
+           ml-4;
+  }
+
+  .ck-content blockquote.side-quote::before {
+    content: "";
+    @apply absolute -top-[37px] -left-[10px] block text-[200px]
+      text-[#e7e7e7] -z-10 leading-none;
+  }
+
+  .ck-content blockquote.side-quote p {
+    @apply text-[2em] leading-none;
+  }
+
+  .ck-content blockquote.side-quote p:last-child:not(:first-child) {
+    @apply text-[1.3em] text-right text-[#555];
+  }
+
+  .ck-content span.marker {
+    @apply bg-yellow-300;
+  }
+
+  .ck-content span.spoiler {
+    @apply bg-black text-black;
+  }
+
+  .ck-content span.spoiler:hover {
+    @apply bg-black text-white;
+  }
+
+  .ck-content pre.fancy-code {
+    @apply border-0 mx-8 rounded-[10px];
+  }
+
+  .ck-content pre.fancy-code::before {
+    content: "";
+    background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NCAxMyI+CiAgPGNpcmNsZSBjeD0iNi41IiBjeT0iNi41IiByPSI2LjUiIGZpbGw9IiNGMzZCNUMiLz4KICA8Y2lyY2xlIGN4PSIyNi41IiBjeT0iNi41IiByPSI2LjUiIGZpbGw9IiNGOUJFNEQiLz4KICA8Y2lyY2xlIGN4PSI0Ny41IiBjeT0iNi41IiByPSI2LjUiIGZpbGw9IiM1NkM0NTMiLz4KPC9zdmc+Cg==);
+    @apply block h-[13px] mb-2 bg-no-repeat;
+  }
+
+  .ck-content pre.fancy-code-dark {
+    @apply bg-[#272822] text-white shadow-[5px_5px_0_rgba(0,0,0,0.12)];
+  }
+
+  .ck-content pre.fancy-code-bright {
+    @apply bg-[#dddfe0] text-black shadow-[5px_5px_0_#b3b3b3];
+  }
+
+  .ck-content ul {
+    @apply list-disc pl-10 my-4;
+  }
+
+  .ck-content ol {
+    @apply list-decimal pl-10 my-4;
+  }
+
+  .ck-content ul li {
+    list-style-type: inherit;
+  }
+
+  .ck-content ol li {
+    list-style-type: inherit;
+  }
+
+  .ck-content p {
+    @apply my-2 leading-relaxed;
+  }
+  .ck-content h1 {
+    @apply text-3xl font-bold my-4;
+  }
+  .ck-content h2 {
+    @apply text-2xl font-bold my-3;
+  }
+  .ck-content h3 {
+    @apply text-xl font-bold my-2;
+  }
+  .ck-content p {
+    @apply my-2 leading-relaxed;
+  }
+  .ck-content a {
+    @apply text-blue-600 hover:text-blue-800 underline;
+  }
+  .ck-content img {
+    @apply max-w-full h-auto my-4;
+  }
+  .ck-content blockquote {
+    @apply pl-4 border-l-4 border-gray-300 italic my-4;
+  }
+  .ck-content table {
+    @apply w-full border-collapse my-4;
+  }
+
+  .ck-content th,
+  .ck-content td {
+    @apply border border-gray-300 p-2;
+  }
+  .ck-content pre {
+    @apply bg-gray-100 p-4 rounded my-4;
+  }
+
+  .ck-content code {
+    @apply bg-gray-100 px-1 rounded;
+  }
+}
