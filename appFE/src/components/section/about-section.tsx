@@ -113,7 +113,7 @@ const AboutSection = () => {
             </h3>
             <RevealEffect>
               <p className="leading-7 2xl:leading-8 text-neutral-400 text-xs sm:text-sm lg:text-base 2xl:text-lg">
-                I am a Web Developer with 2+ years of experience. I specialize in
+                I am a Web Developer with nearly 3 years of experience. I specialize in
                 solving UI/UX challenges and creating optimal features for users.
                 My forte lies in transforming complex ideas into intuitive,
                 user-friendly interfaces. Beyond work, I regularly explore new
