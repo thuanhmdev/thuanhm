@@ -50,12 +50,18 @@ public class BlogService {
     }
 
     public List<BlogDTO> getBlogs() {
-        List<Blog> blogs = this.blogRepository.findAll();
+        List<Blog> blogs = this.blogRepository.findAllByOrderByCreatedAtDesc();
         return blogs.stream().map(this::coverBlogToBlogDTO).toList();
     }
 
     public ResultPaginationDTO getBlogsByPagination(Specification<Blog> specification, Pageable pageable) {
-        Page<Blog> blogs = this.blogRepository.findAll(specification, pageable);
+        Sort sort = Sort.by(Sort.Direction.DESC, "createdAt");
+        Pageable pageableWithSort = PageRequest.of(
+                pageable.getPageNumber(),
+                pageable.getPageSize(),
+                sort
+        );
+        Page<Blog> blogs = this.blogRepository.findAll(specification, pageableWithSort);
         ResultPaginationDTO resultPaginationDTO = new ResultPaginationDTO();
 
         //Meta

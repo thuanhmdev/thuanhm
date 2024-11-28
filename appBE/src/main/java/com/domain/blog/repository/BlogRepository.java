@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface BlogRepository extends JpaRepository<Blog, String>, JpaSpecificationExecutor<Blog> {
     List<Blog> findTop10ByOrderByCreatedAtDesc();
+    List<Blog> findAllByOrderByCreatedAtDesc();
 }
