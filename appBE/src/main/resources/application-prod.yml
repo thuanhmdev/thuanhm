@@ -1,0 +1,62 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  devtools:
+    add-properties: true
+  datasource:
+    url: jdbc:mysql://mysqldb:3306/thuanhm
+    username: root
+    password: ${your_password}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${your_mail_account}
+    password: ${your_mail_password}
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+    default-encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+
+# application-dev.yml
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+openapi:
+  service:
+    api-docs: backend-service
+    server: http://localhost:${server.port}
+    title: Backend service
+    version: 1.0.0
+
+# Generate HMAC Authentication Code: https://www.devglan.com/online-tools/hmac-sha256-online
+app:
+  jwt:
+    jwt-validity-in-hours: 6
+    refresh-token-validity-in-days: 7
+    jwt-secret-key: ${your_key}
+  upload-file:
+    base-uri: file:///blogStorage/
